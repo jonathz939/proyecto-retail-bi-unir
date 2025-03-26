@@ -36,6 +36,20 @@ Analizar el comportamiento de ventas en el sector retail y predecir la demanda f
 - **GitHub**: control de versiones y gestión del proyecto
 
 ---
+---
+
+## 📦 Descarga de datos
+
+El archivo `train.csv` es demasiado grande para subirse directamente a GitHub, por lo que está disponible a través de OneDrive.
+
+🔗 [Descargar train.csv desde OneDrive](https://1drv.ms/u/s!ApTQMCOsUVtCi4NGtz73gJ1FUdfDvw?e=4uSs6I)
+
+### 📁 Instrucciones:
+1. Descarga el archivo desde el enlace anterior.
+2. Guarda el archivo en la siguiente ruta de tu repositorio local:
+
+
+
 
 ## 🔁 Estructura del Proyecto
 
