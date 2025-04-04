@@ -1,31 +1,29 @@
-# Selección de Datos
+## 📊 Datos seleccionados para el proyecto BI - Retail
 
-## Proyecto: Análisis y Predicción de Ventas Retail
+Se utilizará el conjunto de datos **Store Sales - Time Series Forecasting** publicado en Kaggle.
 
-Este proyecto forma parte del Máster en Inteligencia de Negocio (UNIR) y tiene como objetivo construir un Data Warehouse y desarrollar análisis y predicciones sobre el comportamiento de ventas en el sector retail.
+🔗 **Origen del dataset:**  
+https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
 
-## Datos Seleccionados
+### 🧩 Archivos utilizados:
 
-Se ha optado por utilizar el conjunto de datos "Store Sales - Time Series Forecasting" de Kaggle, el cual ofrece una cobertura rica y realista para el diseño de un sistema de Business Intelligence completo. Los archivos seleccionados son:
+- **train.csv**: histórico diario de ventas por tienda y categoría de producto (`store_nbr`, `family`, `sales`, `onpromotion`, `date`).
+- **stores.csv**: detalles de cada tienda (`store_nbr`, `city`, `state`, `type`, `cluster`).
+- **transactions.csv**: total de transacciones realizadas por tienda y día (`store_nbr`, `date`, `transactions`).
+- **holidays_events.csv**: descripción de eventos y días festivos por fecha y región (`date`, `type`, `locale`, `description`).
+- **oil.csv**: precio del petróleo por día (`date`, `dcoilwtico`) como variable externa.
+- **test.csv**: estructura para pruebas de predicción futura.
 
-### Archivos CSV:
+### ✅ Justificación
 
-- **train.csv**: Contiene el histórico diario de ventas por tienda y categoría de producto.
-- **stores.csv**: Información de atributos de cada tienda (ubicación, tipo, clúster).
-- **holidays_events.csv**: Días festivos y eventos especiales, útiles para análisis de estacionalidad y su impacto.
-- **transactions.csv**: Número de transacciones por tienda y fecha, útil para métricas de rendimiento.
-- **oil.csv**: Precio del petróleo por fecha, utilizado como variable externa para contextualizar el entorno económico.
-- **test.csv**: Datos de prueba para predicción y evaluación del modelo (fase posterior).
+El dataset ofrece una rica estructura temporal y categórica, ideal para:
 
-## Justificación
+- Construir un **modelo en estrella** en un Data Warehouse con herramientas como **Crono Metadata y Crono ETL**.
+- Aplicar procesos de carga automatizada desde archivos CSV usando **Crono ETL**.
+- Desarrollar análisis visuales y comparativos con **Crono Analysis**, aprovechando su enfoque de autoservicio para usuarios de negocio.
 
-Estos datos fueron seleccionados porque:
+La granularidad diaria, los eventos, las promociones y el número de transacciones permiten ilustrar claramente el **valor de la inteligencia de negocio** aplicada con herramientas Crono.
 
-- Ofrecen un escenario realista de un negocio retail con múltiples puntos de venta, productos y variación temporal.
-- Permiten construir un modelo de datos en estrella, con una tabla de hechos (`ventas`) y múltiples dimensiones (tienda, producto, fecha, eventos).
-- Son adecuados para aplicar técnicas de análisis de series temporales, cálculo de KPIs y visualización interactiva mediante herramientas como R, Shiny o Power BI.
-- La granularidad diaria permite realizar análisis profundos y predicciones a nivel detallado.
+📂 Esta descripción y su justificación están documentadas en el archivo `doc/seleccion_datos.md` dentro del repositorio.
 
-## Conclusión
 
-El dataset seleccionado permite cubrir todos los objetivos propuestos en el proyecto, desde la construcción del Data Warehouse hasta la creación de dashboards analíticos y modelos predictivos. Su estructura es rica y lo hace ideal para un entorno de aprendizaje práctico.
