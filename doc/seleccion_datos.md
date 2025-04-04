@@ -1,32 +1,30 @@
-# Selección de Datos
+## Datos seleccionados para el proyecto BI - Retail
 
-## Proyecto: Análisis y Predicción de Ventas Retail
+Se utilizará el conjunto de datos **Store Sales - Time Series Forecasting** publicado en Kaggle.
 
-Este proyecto forma parte del Máster en Inteligencia de Negocio (UNIR) y tiene como objetivo construir un Data Warehouse y desarrollar análisis y predicciones sobre el comportamiento de ventas en el sector retail, aplicando herramientas del ecosistema Crono BI.
+**Origen del dataset:**  
+https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
 
-## Datos Seleccionados
+###  Archivos utilizados:
 
-Se ha optado por utilizar el conjunto de datos "Store Sales - Time Series Forecasting" de Kaggle, el cual ofrece una cobertura rica y realista para el diseño de un sistema de Business Intelligence completo. Los archivos seleccionados son:
+- **train.csv**: histórico diario de ventas por tienda y categoría de producto (`store_nbr`, `family`, `sales`, `onpromotion`, `date`).
+- **stores.csv**: detalles de cada tienda (`store_nbr`, `city`, `state`, `type`, `cluster`).
+- **transactions.csv**: total de transacciones realizadas por tienda y día (`store_nbr`, `date`, `transactions`).
+- **holidays_events.csv**: descripción de eventos y días festivos por fecha y región (`date`, `type`, `locale`, `description`).
+- **oil.csv**: precio del petróleo por día (`date`, `dcoilwtico`) como variable externa.
+- **test.csv**: estructura para pruebas de predicción futura.
 
-### Archivos CSV:
+###  Justificación
 
-- **train.csv**: Contiene el histórico diario de ventas por tienda y categoría de producto.
-- **stores.csv**: Información de atributos de cada tienda (ubicación, tipo, clúster).
-- **transactions.csv**: Número de transacciones por tienda y fecha, útil para métricas de rendimiento.
-- **holidays_events.csv**: Días festivos y eventos especiales, útiles para análisis de estacionalidad y su impacto.
-- **oil.csv**: Precio del petróleo por fecha, utilizado como variable externa para contextualizar el entorno económico.
-- **test.csv**: Datos de prueba para predicción y evaluación del modelo (fase posterior).
+El dataset ofrece una rica estructura temporal y categórica, ideal para:
 
-## Justificación
+- Construir un **modelo en estrella** en un Data Warehouse con herramientas como **Crono Metadata y Crono ETL**.
+- Aplicar procesos de carga automatizada desde archivos CSV usando **Crono ETL**.
+- Desarrollar análisis visuales y comparativos con **Crono Analysis**, aprovechando su enfoque de autoservicio para usuarios de negocio.
 
-Este conjunto de datos ha sido seleccionado por su riqueza estructural y temporal, lo que permite construir un Data Warehouse robusto y aplicar las funcionalidades principales del ecosistema Crono BI:
+La granularidad diaria, los eventos, las promociones y el número de transacciones permiten ilustrar claramente el **valor de la inteligencia de negocio** aplicada con herramientas Crono.
 
-- **Crono Metadata**: permite definir una capa semántica que traduce las tablas y campos técnicos en un lenguaje de negocio comprensible, ideal para trabajar con dimensiones como tienda, producto, fecha y eventos.
-- **Crono ETL**: puede aprovecharse para automatizar el proceso de carga de datos desde los archivos CSV (área de staging) hacia un modelo en estrella optimizado para análisis masivos, aplicando buenas prácticas de diseño de DWH.
-- **Crono Analysis**: permite construir consultas, comparativas y cuadros de mando visuales, facilitando el autoservicio para usuarios de negocio que necesitan analizar las ventas por tienda, familia, estado o evento.
+Esta descripción y su justificación están documentadas en el archivo `doc/seleccion_datos.md` dentro del repositorio.
 
-Además, la granularidad diaria del dataset y la presencia de múltiples variables relacionadas (ventas, promociones, eventos, transacciones) son ideales para demostrar el potencial de Crono en el modelado, carga, análisis y visualización de datos en proyectos reales de Business Intelligence.
 
-## Fuente de los datos
-
-📦 Kaggle: https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
+Kaggle: https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
