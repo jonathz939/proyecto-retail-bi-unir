@@ -28,12 +28,13 @@ Analizar el comportamiento de ventas en el sector retail y predecir la demanda f
   - `onpromotion` (promociones)
 
 ---
-
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologías Utilizadas
 
 - **R**: análisis de datos, visualización y modelado
 - **Shiny**: desarrollo de dashboard interactivo
-- **GitHub**: control de versiones y gestión del proyecto
+- **Crono ETL**: carga de datos al área de staging y creación de Data Warehouse
+- **GitHub**: control de versiones y gestión colaborativa del proyecto
+- **SQL Server**: base de datos para consultas analíticas
 
 ---
 ---
