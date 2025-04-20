@@ -1,0 +1,40 @@
+# 📊 Análisis de Datos y Modelado
+
+Esta carpeta contiene los scripts, gráficos y reportes relacionados con el análisis exploratorio de datos (EDA), el modelado predictivo y la visualización de indicadores clave en el proyecto **Retail BI UNIR**.
+
+---
+
+## 🧪 Fases de Análisis Incluidas
+
+### 1. Análisis Exploratorio (EDA)
+- Identificación de tendencias de ventas.
+- Análisis de estacionalidad.
+- Detección de outliers o datos faltantes.
+- Relación entre promociones, fechas y ventas.
+
+### 2. Modelado Predictivo
+- Modelos de regresión, series temporales o machine learning aplicados a predicción de ventas por tienda y familia.
+- Evaluación de modelos (RMSE, MAE, etc.).
+- Scripts en R con `forecast`, `prophet`, `tidymodels`, etc.
+
+### 3. Indicadores y Visualización
+- KPIs definidos previamente calculados con scripts.
+- Dashboards interactivos en **Shiny**.
+- Gráficos elaborados con `ggplot2`, `plotly`, `highcharter`, etc.
+
+---
+
+## 📁 Contenidos Esperados
+
+| Archivo                  | Descripción                                      |
+|--------------------------|--------------------------------------------------|
+| `eda_ventas.R`           | Análisis exploratorio de las ventas.            |
+| `modelo_ventas.R`        | Modelo predictivo para demanda futura.          |
+| `visual_kpis.R`          | Generación de visualizaciones de KPIs.          |
+| `dashboard_shiny.R`      | Código base del dashboard interactivo.          |
+| `reportes_pdf/`          | Informes exportados en formato PDF.             |
+
+---
+
+**Responsable:** Jonath Zambrano  
+**Máster en Inteligencia de Negocio – UNIR**
