@@ -64,5 +64,3 @@ Esta carpeta contiene la documentación descriptiva de las tablas utilizadas en 
 - `store_nbr`: tipo `int64`
 - `family`: tipo `object`
 - `onpromotion`: tipo `int64`
-
-
