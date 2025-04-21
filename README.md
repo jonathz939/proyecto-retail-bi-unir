@@ -1,76 +1,94 @@
-# proyecto-retail-bi-unir
-
 # 📊 Proyecto BI: Análisis y Predicción de Ventas Retail
 
-Este proyecto forma parte de la asignatura de **Prácticas del Máster en Inteligencia de Negocio (UNIR)**.  
-El objetivo es aplicar técnicas de análisis de datos, modelado y visualización interactiva utilizando el lenguaje R.
+Este proyecto forma parte de la asignatura de Prácticas del **Máster en Inteligencia de Negocio (UNIR)**. Su finalidad es aplicar técnicas de análisis de datos, modelado predictivo y visualización interactiva utilizando herramientas profesionales y entornos de desarrollo avanzados.
 
-Repositorio oficial: [proyecto-retail-bi-unir](https://github.com/jonathz939/proyecto-retail-bi-unir)
+🔗 **Repositorio oficial:** `proyecto-retail-bi-unir`
 
 ---
 
 ## 🎯 Objetivo General
 
-Analizar el comportamiento de ventas en el sector retail y predecir la demanda futura por tienda y categoría de producto, con el fin de optimizar la toma de decisiones comerciales.
+Analizar el comportamiento de ventas en el sector retail y predecir la demanda futura por tienda y categoría de producto, con el fin de optimizar la toma de decisiones comerciales y estratégicas.
 
 ---
 
 ## 🧩 Dataset
 
-- **Fuente:** Kaggle - [Store Sales - Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting)
-- **Cobertura temporal:** 2013-01-01 a 2017-08-15
-- **Variables clave:**
-  - `date` (fecha de venta)
-  - `store_nbr` (tienda)
-  - `state` (región)
-  - `family` (categoría de producto)
-  - `sales` (ventas)
-  - `onpromotion` (promociones)
+**Fuente:** Kaggle - *Store Sales - Time Series Forecasting*  
+**Cobertura temporal:** 2013-01-01 a 2017-08-15  
+
+**Variables clave:**
+- `date` — Fecha de venta
+- `store_nbr` — Número de tienda
+- `state` — Región
+- `family` — Categoría de producto
+- `sales` — Ventas registradas
+- `onpromotion` — Promociones activas
 
 ---
+
 ## 🛠️ Tecnologías Utilizadas
 
-- **R**: análisis de datos, visualización y modelado
-- **Shiny**: desarrollo de dashboard interactivo
-- **Crono ETL**: carga de datos al área de staging y creación de Data Warehouse
-- **GitHub**: control de versiones y gestión colaborativa del proyecto
-- **SQL Server**: base de datos para consultas analíticas
+- **R**: Análisis de datos, limpieza, visualización y desarrollo de modelos de predicción.
+- **Shiny**: Creación de dashboards interactivos.
+- **Crono ETL**: Herramienta para la carga y transformación de datos desde archivos `.csv` al área de *staging*, facilitando procesos ETL eficientes.
+- **Crono Metadata**: Para definir la capa semántica del modelo, facilitando el acceso a los datos en lenguaje de negocio.
+- **Crono Analysis**: Para el análisis y visualización de los datos directamente desde el DWH.
+- **Crono SQL**: Lenguaje declarativo que simplifica la integración de fuentes externas y la generación de consultas SQL dentro de Crono.
+- **SQL Server**: Base de datos relacional utilizada para almacenar tanto el staging como el modelo de Data Warehouse.
+- **GitHub**: Gestión del repositorio del proyecto, control de versiones y colaboración mediante *issues* y documentación.
 
 ---
+
+## 📦 Descarga de Datos
+
+Dado que el archivo `train.csv` excede el tamaño permitido por GitHub, se encuentra disponible vía OneDrive.
+
+🔗 [Descargar train.csv desde OneDrive](https://onedrive.live.com/...)
+
+**Instrucciones:**
+1. Descarga el archivo desde el enlace.
+2. Guárdalo en la ruta correspondiente dentro del directorio `data/` de tu repositorio local.
+
 ---
-
-## 📦 Descarga de datos
-
-El archivo `train.csv` es demasiado grande para subirse directamente a GitHub, por lo que está disponible a través de OneDrive.
-
-🔗 [Descargar train.csv desde OneDrive](https://1drv.ms/u/s!ApTQMCOsUVtCi4NGtz73gJ1FUdfDvw?e=4uSs6I)
-
-### 📁 Instrucciones:
-1. Descarga el archivo desde el enlace anterior.
-2. Guarda el archivo en la siguiente ruta de tu repositorio local:
-
-
-
 
 ## 🔁 Estructura del Proyecto
 
+```bash
+proyecto-retail-bi-unir/
+│
+├── data/                     # Archivos de datos CSV
+├── doc/                      # Documentación del proyecto
+│   ├── staging/              # Documentación de tablas de staging
+│   ├── kpis/                 # Indicadores clave
+│   ├── modelado/             # Modelo dimensional
+│   └── README.md             # Guía general de documentación
+├── R/                        # Scripts en R
+│   ├── 01_exploracion.R
+│   ├── 02_limpieza.R
+│   ├── 03_kpis.R
+│   └── 04_modelado.R
+├── scripts/                  # SQL / R para carga y conexión
+├── shiny/                    # Dashboard interactivo
+└── README.md                 # Documento principal del proyecto
+```
 
 ---
 
 ## 🧪 Fases del Proyecto
 
-1. **Carga y exploración de datos** (`01_carga_exploracion.R`)
+1. Carga y exploración de datos (`01_exploracion.R`)
 2. Limpieza y transformación
 3. Análisis exploratorio (EDA)
 4. Definición de KPIs
-5. Modelo predictivo de ventas
-6. Dashboard interactivo en Shiny
+5. Modelado predictivo de ventas
+6. Desarrollo de dashboard interactivo en Shiny
 7. Presentación ejecutiva
 
 ---
 
 ## 👤 Autor
 
-**Jonath**  
+**Jonath Zambrano**  
 [GitHub: jonathz939](https://github.com/jonathz939)  
-Máster en Inteligencia de Negocio - UNIR
+Máster en Inteligencia de Negocio – UNIR
