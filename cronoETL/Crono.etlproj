@@ -1,0 +1,36 @@
+﻿[CRONO ETL PROJECT] (
+  Environments=(
+    ENVIRONMENT (
+      Name='JONATHZAMBR4038',
+      Replacements=(
+        REPLACEMENT ([Key]='@@stg', [Value]='stg'),
+        REPLACEMENT ([Key]='@@GITHUB', [Value]='https://github.com/jonathz939/proyecto-retail-bi-unir/blob/main/data/raw/')
+      ),
+      Datasource=[SQL SERVER CONNECTION] ([Server]='reto.dwh.es ', DatabaseName='RETO03', Username='reto03', Password=[ENCRYPTED TEXT] ([Data]='wjcWDKrKmKwuIPkoOMglAGY0qCDYSlVn')),
+      BackgroundColor=COLOR (Name='White'),
+      IsDefault=NO
+    )
+  ),
+  ExcludedFiles=(),
+  StrategiesFileName='Procedures\Strategies.sql',
+  JobsFolderPath='Jobs',
+  MaxRows=100000,
+  AllowSaveWithErrors=NO,
+  TableFilter='*',
+  ProceduresViewMode='Workflow',
+  EtlOptions=
+    [ETL OPTIONS] (
+      InsertedDateColumnName='InsertDate',
+      UpdatedDateColumnName='UpdateDate',
+      DeletedDateColumnName='DeleteDate',
+      StartDateColumnName='StartDate',
+      EndDateColumnName='EndDate',
+      DefaultEndDate=d'2100-01-01',
+      CurrentDateExpression=EXPRESSION (getdate()),
+      CreateProcedureExtendedProperties=YES
+    ),
+  IsProceduresViewVisible=YES,
+  IsSourceViewVisible=YES,
+  IsOthersViewVisible=NO,
+  IsJobViewVisible=YES
+)

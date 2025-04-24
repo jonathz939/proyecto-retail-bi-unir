@@ -1,0 +1,15 @@
+﻿select 
+	[date],
+	type,
+	locale,
+	locale_name,
+	description,
+	transferred
+from crono$csv(FileName='https://github.com/jonathz939/proyecto-retail-bi-unir/blob/main/data/holidays_events.csv')
+where locale='regional'
+
+
+
+select locale_name,count(*)
+from crono$csv(FileName='https://github.com/jonathz939/proyecto-retail-bi-unir/blob/main/data/holidays_events.csv')
+where locale='regional'
