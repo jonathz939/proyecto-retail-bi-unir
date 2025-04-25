@@ -6,4 +6,4 @@ SELECT
     family,
     sales,
     onpromotion
-FROM Crono$Csv(FileName='C:\Users\jonathzambrano\Documents\PROYECTOUNIR\DATASET\train.csv') materialize into stg.tmpventas tmpventas;
+FROM Crono$Csv(FileName='@@root\..\DATA\raw\train.csv') materialize into stg.tmpventas tmpventas;
