@@ -60,8 +60,6 @@ proyecto-retail-bi-unir/
 ├── data/                     # Archivos de datos CSV
 ├── doc/                      # Documentación del proyecto
 │   ├── staging/              # Documentación de tablas de staging
-│   ├── kpis/                 # Indicadores clave
-│   ├── modelado/             # Modelo dimensional
 │   └── README.md             # Guía general de documentación
 ├── scripts/                  # SQL / R para carga y conexión
 │
