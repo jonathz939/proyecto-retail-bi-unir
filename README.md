@@ -64,11 +64,7 @@ proyecto-retail-bi-unir/
 │   ├── modelado/             # Modelo dimensional
 │   └── README.md             # Guía general de documentación
 ├── scripts/                  # SQL / R para carga y conexión
-│   ├── R/                        # Scripts en R
-│      ├── 01_exploracion.R
-│      ├── 02_limpieza.R
-│      ├── 03_kpis.R
-│      └── 04_modelado.R│
+│
 ├── shiny/                    # Dashboard interactivo
 └── README.md                 # Documento principal del proyecto
 ```
