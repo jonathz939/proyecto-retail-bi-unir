@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE TABLE @@STG.transacciones AS
+﻿CREATE OR REPLACE TABLE @@STG.transactions AS
 SELECT 
     date,
     store_nbr,
