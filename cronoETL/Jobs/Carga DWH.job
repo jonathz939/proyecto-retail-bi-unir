@@ -6,7 +6,8 @@
 		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.test.sql',
 		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.train.sql',
 		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.transactions.sql'
+	),
+	WORKFLOW 'Carga DWH' (
+		dwh.Tiendas
 	)
-
-
 )
