@@ -29,8 +29,6 @@ Analizar el comportamiento de ventas en el sector retail y predecir la demanda f
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **R**: Análisis de datos, limpieza, visualización y desarrollo de modelos de predicción.
-- **Shiny**: Creación de dashboards interactivos.
 - **Crono ETL**: Herramienta para la carga y transformación de datos desde archivos `.csv` al área de *staging*, facilitando procesos ETL eficientes.
 - **Crono Metadata**: Para definir la capa semántica del modelo, facilitando el acceso a los datos en lenguaje de negocio.
 - **Crono Analysis**: Para el análisis y visualización de los datos directamente desde el DWH.
