@@ -62,9 +62,7 @@ proyecto-retail-bi-unir/
 │   ├── staging/              # Documentación de tablas de staging
 │   └── README.md             # Guía general de documentación
 ├── scripts/                  # SQL / R para carga y conexión
-│
-├── shiny/                    # Dashboard interactivo
-└── README.md                 # Documento principal del proyecto
+
 ```
 
 ---
