@@ -1,0 +1,13 @@
+﻿WORKFLOW (
+	WORKFLOW 'Cargar staging' (
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.holidays_events.sql',
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.oil.sql',
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@stg.stores.sql',
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.test.sql',
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.train.sql',
+		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.transactions.sql'
+	),
+	WORKFLOW 'Carga DWH' (
+		dwh.Tiendas
+	)
+)

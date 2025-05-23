@@ -1,4 +1,7 @@
-﻿CREATE OR REPLACE TABLE @@STG.eventos AS
+﻿-- Son los datos de las festividades locales ("feriados")
+
+
+CREATE OR REPLACE TABLE @@STG.holidays_events AS
 SELECT 
     date,
     type,

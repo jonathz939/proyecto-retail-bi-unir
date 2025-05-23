@@ -29,8 +29,6 @@ Analizar el comportamiento de ventas en el sector retail y predecir la demanda f
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **R**: Análisis de datos, limpieza, visualización y desarrollo de modelos de predicción.
-- **Shiny**: Creación de dashboards interactivos.
 - **Crono ETL**: Herramienta para la carga y transformación de datos desde archivos `.csv` al área de *staging*, facilitando procesos ETL eficientes.
 - **Crono Metadata**: Para definir la capa semántica del modelo, facilitando el acceso a los datos en lenguaje de negocio.
 - **Crono Analysis**: Para el análisis y visualización de los datos directamente desde el DWH.
@@ -60,17 +58,9 @@ proyecto-retail-bi-unir/
 ├── data/                     # Archivos de datos CSV
 ├── doc/                      # Documentación del proyecto
 │   ├── staging/              # Documentación de tablas de staging
-│   ├── kpis/                 # Indicadores clave
-│   ├── modelado/             # Modelo dimensional
 │   └── README.md             # Guía general de documentación
 ├── scripts/                  # SQL / R para carga y conexión
-│   ├── R/                        # Scripts en R
-│      ├── 01_exploracion.R
-│      ├── 02_limpieza.R
-│      ├── 03_kpis.R
-│      └── 04_modelado.R│
-├── shiny/                    # Dashboard interactivo
-└── README.md                 # Documento principal del proyecto
+
 ```
 
 ---

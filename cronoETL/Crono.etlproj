@@ -1,7 +1,7 @@
 ﻿[CRONO ETL PROJECT] (
   Environments=(
     ENVIRONMENT (
-      Name='JONATHZAMBR4038',
+      Name='RETO03',
       Replacements=(
         REPLACEMENT ([Key]='@@stg', [Value]='stg'),
         REPLACEMENT ([Key]='@@GITHUB', [Value]='https://github.com/jonathz939/proyecto-retail-bi-unir/blob/main/data/raw/')

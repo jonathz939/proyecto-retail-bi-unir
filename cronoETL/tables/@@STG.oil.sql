@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE TABLE @@STG.petroleo AS
+﻿CREATE OR REPLACE TABLE @@STG.oil AS
 SELECT 
     date,
     dcoilwtico
