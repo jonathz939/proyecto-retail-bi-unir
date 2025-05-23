@@ -3,7 +3,7 @@
 CREATE OR REPLACE PROCEDURE
 MERGE CLONE dwh.Ventas(IdVenta)
 select 
-	Fechas.Fecha				#Fecha,
+	Fechas.Fecha				#Fecha NONUNIQUE REFERENCES dwh.Fechas,
 	Tiendas.CodigoTienda		#CodigoTienda,
 	Familias.CodigoFamilia		#CodigoFamilia,
 	Tiendas.IdTienda			IdTienda NONUNIQUE REFERENCES dwh.Tiendas,

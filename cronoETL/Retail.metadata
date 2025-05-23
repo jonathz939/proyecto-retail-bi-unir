@@ -1,0 +1,106 @@
+﻿[DATABASE] (
+  Name='Retail',
+  Guid='CoBgHoAejp',
+  DataSource=[SQL SERVER CONNECTION] ([Server]='reto.dwh.es', DatabaseName='RETO03', Username='reto03', Password=[ENCRYPTED TEXT] ([Data]='wjcWDKrKmKwuIPkoOMglALVf7+26Djsh')),
+  [Tables]=(
+    [TABLE] (TableAlias='Familias', TableName='dwh.Familias', PkColumns=('IdFamilia'), TableColumns=(
+      [TABLE COLUMN] (Name='IdFamilia', DataType='int', IsNullable=NO, IsIdentity=YES),
+      [TABLE COLUMN] (Name='CodigoFamilia', DataType='varchar(100)', IsNullable=YES),
+      [TABLE COLUMN] (Name='Familia', DataType='varchar(100)', IsNullable=YES),
+      [TABLE COLUMN] (Name='InsertDate', DataType='datetime', IsNullable=NO),
+      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES)
+    ), Indexes=(
+      [TABLE INDEX] (Name='BK_Familias', IsClustered=NO, IsUnique=YES, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Familias', [Column]='CodigoFamilia', ColumnsCount=1, ConstraintName='BK_Familias'),
+      [TABLE INDEX] (Name='PK_Familias', IsClustered=YES, IsUnique=YES, IsPrimary=YES, IsDisabled=NO, [Schema]='dwh', [Table]='Familias', [Column]='IdFamilia', ColumnsCount=1, ConstraintName='PK_Familias')
+    )),
+    [TABLE] (TableAlias='Fechas', TableName='dwh.Fechas', PkColumns=('Fecha'), TableColumns=(
+      [TABLE COLUMN] (Name='Fecha', DataType='date', IsNullable=NO),
+      [TABLE COLUMN] (Name='Año', DataType='int', IsNullable=YES),
+      [TABLE COLUMN] (Name='Trimestre', DataType='varchar(13)', IsNullable=NO),
+      [TABLE COLUMN] (Name='NumeroMes', DataType='int', IsNullable=YES),
+      [TABLE COLUMN] (Name='NombreMes', DataType='nvarchar(30)', IsNullable=YES),
+      [TABLE COLUMN] (Name='Mes', DataType='nvarchar(43)', IsNullable=NO),
+      [TABLE COLUMN] (Name='NumeroDia', DataType='int', IsNullable=YES),
+      [TABLE COLUMN] (Name='DiaSemana', DataType='nvarchar(30)', IsNullable=YES),
+      [TABLE COLUMN] (Name='Semana', DataType='nvarchar(4000)', IsNullable=NO),
+      [TABLE COLUMN] (Name='InsertDate', DataType='datetime', IsNullable=NO),
+      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES)
+    ), Indexes=(
+      [TABLE INDEX] (Name='BK_Fechas', IsClustered=NO, IsUnique=YES, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Fechas', [Column]='Fecha', ColumnsCount=1, ConstraintName='BK_Fechas'),
+      [TABLE INDEX] (Name='PK_Fechas', IsClustered=YES, IsUnique=YES, IsPrimary=YES, IsDisabled=NO, [Schema]='dwh', [Table]='Fechas', [Column]='Fecha', ColumnsCount=1, ConstraintName='PK_Fechas')
+    )),
+    [TABLE] (TableAlias='Tiendas', TableName='dwh.Tiendas', PkColumns=('IdTienda'), TableColumns=(
+      [TABLE COLUMN] (Name='IdTienda', DataType='int', IsNullable=NO, IsIdentity=YES),
+      [TABLE COLUMN] (Name='CodigoTienda', DataType='int', IsNullable=NO),
+      [TABLE COLUMN] (Name='Tienda', DataType='varchar(35)', IsNullable=NO),
+      [TABLE COLUMN] (Name='Ciudad', DataType='varchar(13)', IsNullable=NO),
+      [TABLE COLUMN] (Name='Estado', DataType='varchar(30)', IsNullable=NO),
+      [TABLE COLUMN] (Name='ClasficacionABC', DataType='varchar(1)', IsNullable=NO),
+      [TABLE COLUMN] (Name='ClusterDeTienda', DataType='int', IsNullable=NO),
+      [TABLE COLUMN] (Name='InsertDate', DataType='datetime', IsNullable=NO),
+      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES)
+    ), Indexes=(
+      [TABLE INDEX] (Name='BK_Tiendas', IsClustered=NO, IsUnique=YES, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Tiendas', [Column]='CodigoTienda', ColumnsCount=1, ConstraintName='BK_Tiendas'),
+      [TABLE INDEX] (Name='PK_Tiendas', IsClustered=YES, IsUnique=YES, IsPrimary=YES, IsDisabled=NO, [Schema]='dwh', [Table]='Tiendas', [Column]='IdTienda', ColumnsCount=1, ConstraintName='PK_Tiendas')
+    )),
+    [TABLE] (TableAlias='Ventas', TableName='dwh.Ventas', PkColumns=('IdVenta'), TableColumns=(
+      [TABLE COLUMN] (Name='IdVenta', DataType='int', IsNullable=NO, IsIdentity=YES),
+      [TABLE COLUMN] (Name='Fecha', DataType='date', IsNullable=NO),
+      [TABLE COLUMN] (Name='CodigoTienda', DataType='int', IsNullable=NO),
+      [TABLE COLUMN] (Name='CodigoFamilia', DataType='varchar(100)', IsNullable=YES),
+      [TABLE COLUMN] (Name='IdTienda', DataType='int', IsNullable=NO),
+      [TABLE COLUMN] (Name='IdFamilia', DataType='int', IsNullable=NO),
+      [TABLE COLUMN] (Name='UnidadesVendidas', DataType='float', IsNullable=YES),
+      [TABLE COLUMN] (Name='InsertDate', DataType='datetime', IsNullable=NO),
+      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES)
+    ), ForeignKeys=(
+      [FOREIGN KEY] (Name='FK dwh.Ventas(Fecha) dwh.Fechas', IsNullable=NO, ColumnNames=('Fecha'), ReferencedTableName='dwh.Fechas', ReferencedColumnNames=('Fecha'), UpdateRule='NO ACTION', DeleteRule='NO ACTION'),
+      [FOREIGN KEY] (Name='FK dwh.Ventas(IdFamilia) dwh.Familias', IsNullable=NO, ColumnNames=('IdFamilia'), ReferencedTableName='dwh.Familias', ReferencedColumnNames=('IdFamilia'), UpdateRule='NO ACTION', DeleteRule='NO ACTION'),
+      [FOREIGN KEY] (Name='FK dwh.Ventas(IdTienda) dwh.Tiendas', IsNullable=NO, ColumnNames=('IdTienda'), ReferencedTableName='dwh.Tiendas', ReferencedColumnNames=('IdTienda'), UpdateRule='NO ACTION', DeleteRule='NO ACTION')
+    ), Indexes=(
+      [TABLE INDEX] (Name='BK_Ventas', IsClustered=NO, IsUnique=YES, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Ventas', ColumnsCount=3, ConstraintName='BK_Ventas'),
+      [TABLE INDEX] (Name='INDEX dwh.Ventas Fecha', IsClustered=NO, IsUnique=NO, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Ventas', [Column]='Fecha', ColumnsCount=1),
+      [TABLE INDEX] (Name='INDEX dwh.Ventas IdFamilia', IsClustered=NO, IsUnique=NO, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Ventas', [Column]='IdFamilia', ColumnsCount=1),
+      [TABLE INDEX] (Name='INDEX dwh.Ventas IdTienda', IsClustered=NO, IsUnique=NO, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Ventas', [Column]='IdTienda', ColumnsCount=1),
+      [TABLE INDEX] (Name='PK_Ventas', IsClustered=YES, IsUnique=YES, IsPrimary=YES, IsDisabled=NO, [Schema]='dwh', [Table]='Ventas', [Column]='IdVenta', ColumnsCount=1, ConstraintName='PK_Ventas')
+    ))
+  ),
+  Joins=(
+    [JOIN] (TableAlias1='Ventas', TableAlias2='Fechas', JoinType='InnerJoin', UsingColumnsTable1=('Fecha'), UsingColumnsTable2=('Fecha')),
+    [JOIN] (TableAlias1='Ventas', TableAlias2='Tiendas', JoinType='InnerJoin', UsingColumnsTable1=('IdTienda'), UsingColumnsTable2=('IdTienda')),
+    [JOIN] (TableAlias1='Ventas', TableAlias2='Familias', JoinType='InnerJoin', UsingColumnsTable1=('IdFamilia'), UsingColumnsTable2=('IdFamilia'))
+  ),
+  Items=(
+    [BUSINESS ITEM] (Name='Tiendas', Guid='dcGFzYOj', AggregationFunction='Default', Items=(
+      [BUSINESS ITEM] (Name='Código tienda', Definition=Tiendas.CodigoTienda, Guid='hVzqLSyI', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Int32', Items=()),
+      [BUSINESS ITEM] (Name='Tienda', Definition=Tiendas.Tienda, Guid='fdoEXPgz', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Ciudad', Definition=Tiendas.Ciudad, Guid='TgwkpjES', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Estado', Definition=Tiendas.Estado, Guid='geRjesog', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Clasficacion abc', Definition=Tiendas.ClasficacionABC, Guid='ojUklqPk', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Cluster de tienda', Definition=Tiendas.ClusterDeTienda, Guid='qxfZJeHI', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Int32', Items=())
+    )),
+    [BUSINESS ITEM] (Name='Familias', Guid='KyZmBoUG', AggregationFunction='Default', Items=(
+      [BUSINESS ITEM] (Name='Código familia', Definition=Familias.CodigoFamilia, Guid='VtRewGqe', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Familia', Definition=Familias.Familia, Guid='akrbRnca', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=())
+    )),
+    [BUSINESS ITEM] (Name='Fechas', Guid='RvdAWLoW', AggregationFunction='Default', Items=(
+      [BUSINESS ITEM] (Name='Fecha', Definition=Fechas.Fecha, Guid='ltlTCVzT', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.DateTime', Items=()),
+      [BUSINESS ITEM] (Name='Año', Definition=Fechas.[Año], Guid='zZvibjTD', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Int32', Items=()),
+      [BUSINESS ITEM] (Name='Trimestre', Definition=Fechas.Trimestre, Guid='UDgilaYU', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Mes', Definition=Fechas.Mes, Guid='rYQULavM', LovEnabled=YES, LovOrderBy=Fechas.Fecha, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=(
+        [BUSINESS ITEM] (Name='Nombre mes', Definition=Fechas.NombreMes, Guid='DjbWOvzo', LovEnabled=YES, LovOrderBy=Fechas.NumeroMes, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+        [BUSINESS ITEM] (Name='Número mes', Definition=Fechas.NumeroMes, Guid='OkQjAdjV', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Int32', Items=())
+      )),
+      [BUSINESS ITEM] (Name='Dia semana', Definition=Fechas.DiaSemana, Guid='nqfpkiFP', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Semana', Definition=Fechas.Semana, Guid='PAmNazwc', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=())
+    )),
+    [BUSINESS ITEM] (Name='Ventas', Guid='cbtbiDTS', AggregationFunction='Default', Items=(
+      [BUSINESS ITEM] (Name='Unidades vendidas', Definition=EXPRESSION (sum(Ventas.UnidadesVendidas)), Guid='WIHpUIfU', AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Double', Items=())
+    ))
+  ),
+  TableFilter='*',
+  DefaultLanguage='es',
+  TranslateAllOnSaving=NO,
+  TablesSortMode='TableAlias',
+  AvoidRepeatTablesOnDiagrams=NO
+)
