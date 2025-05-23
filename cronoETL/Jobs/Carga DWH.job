@@ -8,6 +8,9 @@
 		FILE 'D:\GitHub\RetoJonath\cronoETL\tables\@@STG.transactions.sql'
 	),
 	WORKFLOW 'Carga DWH' (
-		dwh.Tiendas
+		dwh.Tiendas,
+		dwh.Familias,
+		dwh.Fechas,
+		dwh.Ventas
 	)
 )
