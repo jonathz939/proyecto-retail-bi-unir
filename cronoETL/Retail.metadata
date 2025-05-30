@@ -1,7 +1,7 @@
 ﻿[DATABASE] (
   Name='Retail',
   Guid='CoBgHoAejp',
-  DataSource=[SQL SERVER CONNECTION] ([Server]='reto.dwh.es', DatabaseName='RETO03', Username='reto03', Password=[ENCRYPTED TEXT] ([Data]='wjcWDKrKmKwuIPkoOMglALVf7+26Djsh')),
+  DataSource=[SQL SERVER CONNECTION] ([Server]='reto.dwh.es', DatabaseName='RETO03', Username='reto03', Password=[ENCRYPTED TEXT] ([Data]='wjcWDKrKmKwuIPkoOMglAGY0qCDYSlVn')),
   [Tables]=(
     [TABLE] (TableAlias='Familias', TableName='dwh.Familias', PkColumns=('IdFamilia'), TableColumns=(
       [TABLE COLUMN] (Name='IdFamilia', DataType='int', IsNullable=NO, IsIdentity=YES),
@@ -24,7 +24,11 @@
       [TABLE COLUMN] (Name='DiaSemana', DataType='nvarchar(30)', IsNullable=YES),
       [TABLE COLUMN] (Name='Semana', DataType='nvarchar(4000)', IsNullable=NO),
       [TABLE COLUMN] (Name='InsertDate', DataType='datetime', IsNullable=NO),
-      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES)
+      [TABLE COLUMN] (Name='UpdateDate', DataType='datetime', IsNullable=YES),
+      [TABLE COLUMN] (Name='TipoFestivo', DataType='varchar(10)', IsNullable=YES),
+      [TABLE COLUMN] (Name='AmbitoFestivo', DataType='varchar(8)', IsNullable=YES),
+      [TABLE COLUMN] (Name='LocalidadFestivo', DataType='varchar(30)', IsNullable=YES),
+      [TABLE COLUMN] (Name='Festividad', DataType='varchar(47)', IsNullable=YES)
     ), Indexes=(
       [TABLE INDEX] (Name='BK_Fechas', IsClustered=NO, IsUnique=YES, IsPrimary=NO, IsDisabled=NO, [Schema]='dwh', [Table]='Fechas', [Column]='Fecha', ColumnsCount=1, ConstraintName='BK_Fechas'),
       [TABLE INDEX] (Name='PK_Fechas', IsClustered=YES, IsUnique=YES, IsPrimary=YES, IsDisabled=NO, [Schema]='dwh', [Table]='Fechas', [Column]='Fecha', ColumnsCount=1, ConstraintName='PK_Fechas')
@@ -92,7 +96,11 @@
         [BUSINESS ITEM] (Name='Número mes', Definition=Fechas.NumeroMes, Guid='OkQjAdjV', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Int32', Items=())
       )),
       [BUSINESS ITEM] (Name='Dia semana', Definition=Fechas.DiaSemana, Guid='nqfpkiFP', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
-      [BUSINESS ITEM] (Name='Semana', Definition=Fechas.Semana, Guid='PAmNazwc', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=())
+      [BUSINESS ITEM] (Name='Semana', Definition=Fechas.Semana, Guid='PAmNazwc', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Tipo festivo', Definition=Fechas.TipoFestivo, Guid='lDbSTnXv', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Ámbito festivo', Definition=Fechas.AmbitoFestivo, Guid='vsyNpskv', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Localidad festivo', Definition=Fechas.LocalidadFestivo, Guid='OnRruevt', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=()),
+      [BUSINESS ITEM] (Name='Festividad', Definition=Fechas.Festividad, Guid='MavuLszj', LovEnabled=YES, AggregationFunction='Default', DataType=OBJECT_TYPE 'System.String', Items=())
     )),
     [BUSINESS ITEM] (Name='Ventas', Guid='cbtbiDTS', AggregationFunction='Default', Items=(
       [BUSINESS ITEM] (Name='Unidades vendidas', Definition=EXPRESSION (sum(Ventas.UnidadesVendidas)), Guid='WIHpUIfU', AggregationFunction='Default', DataType=OBJECT_TYPE 'System.Double', Items=())
